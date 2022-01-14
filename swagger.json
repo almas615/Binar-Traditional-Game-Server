@@ -13,7 +13,7 @@
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "host": "localhost:3000",
+    "host": "localhost:4000",
     "basePath": "/api",
     "tags": [
         {
@@ -93,9 +93,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
                                 "message": {
                                     "type": "string",
@@ -162,9 +162,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -182,9 +182,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -198,9 +198,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -253,9 +253,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
                                 "message": {
                                     "type": "string",
@@ -284,11 +284,10 @@
                                             "type": "string",
                                             "example": "dadang123@gmail.com"
                                         },
-                                        "accessToken":{
-                                            "type":"string",
-                                            "example":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJkYWRhbmdAZ21haWwuY29tIiwidXNlcm5hbWUiOiJkYWRhbmciLCJpYXQiOjE2MzcwNjI1NTR9.9RHTynKndbfwcGX2tUcBczymVgtjhM-MWZgCm99gIpo"
+                                        "accessToken": {
+                                            "type": "string",
+                                            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJkYWRhbmdAZ21haWwuY29tIiwidXNlcm5hbWUiOiJkYWRhbmciLCJpYXQiOjE2MzcwNjI1NTR9.9RHTynKndbfwcGX2tUcBczymVgtjhM-MWZgCm99gIpo"
                                         }
-                                       
                                     }
                                 }
                             }
@@ -299,9 +298,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -315,9 +314,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -331,9 +330,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -370,9 +369,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -429,11 +428,10 @@
                                 "message": {
                                     "type": "string",
                                     "example": "Some error occurred while retriving the Game"
-                                    
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -463,15 +461,15 @@
                                     "type": "string",
                                     "example": "game batu kertas dan gunting"
                                 },
-                                "thumbnail_url": {
+                                "thumbnailUrl": {
                                     "type": "string",
                                     "example": "lorem"
                                 },
-                                "game_url": {
+                                "gameUrl": {
                                     "type": "string",
                                     "example": "lorem ipsum"
                                 },
-                                "play_count": {
+                                "playCount": {
                                     "type": "integer",
                                     "example": "0"
                                 }
@@ -492,9 +490,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -551,11 +549,10 @@
                                 "message": {
                                     "type": "string",
                                     "example": "Some error occurred while retriving the Game"
-                                    
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -584,9 +581,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -627,11 +624,10 @@
                                 "message": {
                                     "type": "string",
                                     "example": "Some error occurred while retriving the Game"
-                                    
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -668,9 +664,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "object",
@@ -741,9 +737,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while retreving the Game data"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -780,9 +776,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -841,9 +837,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while creating the Player"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -868,13 +864,13 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -936,9 +932,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
                                 "message": {
                                     "type": "string",
@@ -952,9 +948,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
                                 "message": {
                                     "type": "string",
@@ -995,9 +991,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "object",
@@ -1080,9 +1076,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while retreving the Player"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -1097,9 +1093,7 @@
                 ],
                 "summary": "Get User Played Game",
                 "description": "",
-                "parameters": [
-                   
-                ],
+                "parameters": [],
                 "produces": [
                     "application/json"
                 ],
@@ -1113,9 +1107,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"successfully retrive data"
+                                "message": {
+                                    "type": "string",
+                                    "example": "successfully retrive data"
                                 },
                                 "data": {
                                     "type": "array",
@@ -1145,9 +1139,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while retreving the data"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -1232,9 +1226,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"success"
+                                "result": {
+                                    "type": "string",
+                                    "example": "success"
                                 },
                                 "message": {
                                     "type": "string",
@@ -1301,9 +1295,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -1317,17 +1311,17 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
                                     "example": "Some error"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -1337,9 +1331,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -1397,9 +1391,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"data score has been successfully updated"
+                                "message": {
+                                    "type": "string",
+                                    "example": "data score has been successfully updated"
                                 },
                                 "data": {
                                     "type": "object",
@@ -1422,9 +1416,9 @@
                                     "type": "string",
                                     "example": "SUCCESS"
                                 },
-                                "message":{
-                                    "type":"string",
-                                    "example":"data score has been successfully added"
+                                "message": {
+                                    "type": "string",
+                                    "example": "data score has been successfully added"
                                 },
                                 "data": {
                                     "type": "object",
@@ -1443,9 +1437,9 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "result":{
-                                    "type":"string",
-                                    "example":"failed"
+                                "result": {
+                                    "type": "string",
+                                    "example": "failed"
                                 },
                                 "message": {
                                     "type": "string",
@@ -1467,9 +1461,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while updating the Player score"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
@@ -1487,9 +1481,9 @@
                                     "type": "string",
                                     "example": "Some error occurred while adding the Player score"
                                 },
-                                "error":{
-                                    "type":"string",
-                                    "example":"error message"
+                                "error": {
+                                    "type": "string",
+                                    "example": "error message"
                                 }
                             }
                         }
