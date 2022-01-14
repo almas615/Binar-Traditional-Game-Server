@@ -1,28 +1,26 @@
 const { Game, Detail, User } = require('../models');
 
 const newGame = (req, res) => {
-  const { name, description, thumbnail_url, game_url, play_count } = req.body;
+  const {
+    name, description, thumbnailUrl, gameUrl, playCount,
+  } = req.body;
   Game.create({
     name,
     description,
-    thumbnail_url,
-    game_url,
-    play_count,
+    thumbnail_url: thumbnailUrl,
+    game_url: gameUrl,
+    play_count: playCount,
   })
-    .then((data) => {
-      return res.status(201).json({
-        result: 'success',
-        message: 'new game has beed successfully crated',
-        data: data,
-      });
-    })
-    .catch((err) => {
-      return res.status(500).json({
-        result: 'failed',
-        message: 'failed create new game',
-        error: err,
-      });
-    });
+    .then((data) => res.status(201).json({
+      result: 'success',
+      message: 'new game has beed successfully crated',
+      data,
+    }))
+    .catch((err) => res.status(500).json({
+      result: 'failed',
+      message: 'failed create new game',
+      error: err,
+    }));
 };
 
 const findAll = (req, res) => {
@@ -31,7 +29,7 @@ const findAll = (req, res) => {
       res.status(200).json({
         result: 'success',
         message: 'successfully retrieve data',
-        data: data,
+        data,
       });
     })
     .catch((err) => {
@@ -56,10 +54,10 @@ const findOne = (req, res) => {
           message: 'game not registered',
         });
       }
-      res.status(200).json({
+      return res.status(200).json({
         result: 'success',
         message: 'successfully retrieve data',
-        data: data,
+        data,
       });
     })
     .catch((err) => {
