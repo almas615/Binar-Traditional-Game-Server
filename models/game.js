@@ -1,7 +1,11 @@
+/* eslint-disable lines-around-directive */
+// eslint-disable-next-line strict
 'use strict';
+
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Game extends Model {
     /**
@@ -14,21 +18,20 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Detail, {
         foreignKey: 'gameId',
         sourceKey: 'id',
-        as: 'detail_game'
+        as: 'detail_game',
       });
-      
     }
-  };
+  }
   Game.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     thumbnail_url: DataTypes.STRING,
     game_url: DataTypes.STRING,
-    play_count: DataTypes.INTEGER
+    play_count: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Game',
-    tableName:'games',
+    tableName: 'games',
   });
   return Game;
 };
