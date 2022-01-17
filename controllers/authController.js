@@ -1,9 +1,18 @@
+require('dotenv').config();
 const { User } = require('../models');
+const cloudinary = require('cloudinary');
 const { OAuth2Client } = require('google-auth-library');
 const { comparePassword } = require('../helpers/bcrypt');
 const { generateToken } = require('../helpers/jwt');
 const { sendEmail } = require('../helpers/sendEmail');
 const bcrypt = require('bcryptjs');
+
+// Setting up cloudinary config
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const format = (user) => {
   const { id, first_name, last_name, email, username } = user;
@@ -52,12 +61,19 @@ const register = async (req, res) => {
   }
 
   try {
+    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: 'binar_chp11/avatar',
+      width: '150',
+      crop: 'scale',
+    });
     const user = await User.create({
       first_name,
       last_name,
       email,
       username,
       password,
+      avatar_public_id: result.public_id,
+      avatar_url: result.secure_url,
     });
 
     return res.status(201).json({
