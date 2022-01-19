@@ -69,7 +69,15 @@ const findOne = (req, res) => {
     });
 };
 
+// eslint-disable-next-line consistent-return
 const getLeaderboard = (req, res) => {
+  const number = /^[0-9]+$/;
+  if (!req.params.id.match(number)) {
+    return res.status(400).json({
+      result: 'failed',
+      message: 'bad request',
+    });
+  }
   Detail.findAll({
     where: {
       gameId: req.params.id,
