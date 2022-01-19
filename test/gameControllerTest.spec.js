@@ -20,18 +20,22 @@ const mockResponse = () => {
     return res;
 };
 
+
 jest.mock('../models');
+
 
 
 // judul kumpulan test
 describe('game.getLeaderboard function', () => {
-    const detail = {}
+    const detail = {
+        nama: 'almas',
+    }
     // judul & skenario test
     // gunakan async pada parameter kedua jika fungsi controller berupa fungsi async
     test('expected to return status 200 and return json ', async () => {
         const req = mockRequest({ id: '1' });
         const res = mockResponse();
-        Detail.findAll.mockResolvedValue(detail);
+        Detail.findAll.mockResolvedValueOnce(detail);
 
         // gunakan await jika fungsi berupa fungsi async
         await game.getLeaderboard(req, res);
@@ -40,14 +44,14 @@ describe('game.getLeaderboard function', () => {
         expect(res.json).toBeCalledWith({
             result: "success",
             message: 'successfully retrieve data',
-            data: {}
+            data: {
+                nama: 'almas',
+            }
         });
     });
     test('expected to return status 400', async () => {
         const req = mockRequest({ id: "a" });
         const res = mockResponse();
-        Detail.findAll.mockResolvedValue(detail);
-
         // gunakan await jika fungsi berupa fungsi async
         await game.getLeaderboard(req, res);
 
@@ -61,23 +65,16 @@ describe('game.getLeaderboard function', () => {
     test('expected to return status 500', async () => {
         const req = mockRequest({ id: "1" });
         const res = mockResponse();
-        const err = new Error('network')
-        Detail.findAll.mockRejectedValueOnce(new Error('error'));
+        Detail.findAll.mockImplementation(() => Promise.reject(new Error('eror')))
 
         // gunakan await jika fungsi berupa fungsi async
-        try {
-
-            await game.getLeaderboard(req, res);
-        }
-        catch {
-
-            expect(res.status).toBeCalledWith(200);
-            expect(res.json).toBeCalledWith({
-                result: "failed",
-                message: 'some error occured while retrieving game',
-
-            });
-        }
+        await game.getLeaderboard(req, res);
+        expect(res.status).toBeCalledWith(500);
+        expect(res.json).toBeCalledWith({
+            result: "failed",
+            message: 'some error occured while retrieving game',
+            error: 'eror'
+        });
 
     });
 });
