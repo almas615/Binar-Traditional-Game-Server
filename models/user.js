@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 const { hash } = require('bcryptjs');
 const { Model } = require('sequelize');
@@ -78,11 +79,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       avatar_public_id: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       avatar_url: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       total_score: DataTypes.INTEGER,
       bio: DataTypes.STRING,
