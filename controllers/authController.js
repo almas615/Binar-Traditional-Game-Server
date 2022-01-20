@@ -129,13 +129,11 @@ const register = async (req, res) => {
       },
     });
   } catch (err) {
-    console.log(err, 'ini error');
-    // return res.status(400).json({
-    //   result: 'failed',
-    //   message:
-    //     'Registration Failed, Please go back and double check your information and make sure that is valid',
-    //   error: err.errors[0].message,
-    // });
+    return res.status(500).json({
+      result: 'failed',
+      message: 'Opps! Registration Failed, Something went wrong',
+      error: err.error,
+    });
   }
 };
 
