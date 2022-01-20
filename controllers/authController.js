@@ -103,19 +103,19 @@ const register = async (req, res) => {
         message: 'Your password must be longer than 6 characters',
       });
     }
-    // const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-    //   folder: 'binar_chp11/avatar',
-    //   width: '150',
-    //   crop: 'scale',
-    // });
+    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: 'binar_chp11/avatar',
+      width: '150',
+      crop: 'scale',
+    });
     const user = await User.create({
       first_name,
       last_name,
       email,
       username,
       password,
-      // avatar_public_id: result.public_id,
-      // avatar_url: result.secure_url,
+      avatar_public_id: result.public_id,
+      avatar_url: result.secure_url,
     });
 
     return res.status(201).json({

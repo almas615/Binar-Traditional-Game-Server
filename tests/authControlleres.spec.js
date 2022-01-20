@@ -1,7 +1,9 @@
 const auth = require('../controllers/authController');
+const cloudinary = require('cloudinary');
 const { User } = require('../models');
 
 jest.mock('../models');
+jest.mock('cloudinary');
 
 const mockRequest = (body = {}) => {
   return { body };
@@ -148,7 +150,11 @@ describe('register function', () => {
       email: 'binar103@gmail.com',
       username: 'binar103',
       password: 123456,
+      avatar_public_id: 'null',
+      avatar_url: 'null',
     });
+
+    await cloudinary.v2.uploader.upload.mockResolvedValue({});
 
     User.create.mockResolvedValueOnce({
       first_name: 'binar',
