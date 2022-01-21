@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.18% </span>
+                <span class="strong">61.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>175/286</span>
+                <span class='fraction'>174/282</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.18% </span>
+                <span class="strong">61.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>175/286</span>
+                <span class='fraction'>174/282</span>
             </div>
         
             
@@ -345,12 +345,7 @@
 <a name='L280'></a><a href='#L280'>280</a>
 <a name='L281'></a><a href='#L281'>281</a>
 <a name='L282'></a><a href='#L282'>282</a>
-<a name='L283'></a><a href='#L283'>283</a>
-<a name='L284'></a><a href='#L284'>284</a>
-<a name='L285'></a><a href='#L285'>285</a>
-<a name='L286'></a><a href='#L286'>286</a>
-<a name='L287'></a><a href='#L287'>287</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L283'></a><a href='#L283'>283</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -519,7 +514,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -562,8 +556,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -635,12 +627,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable */
-require('dotenv').config();
-const { User } = require('../models');
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">require('dotenv').config();
 const cloudinary = require('cloudinary');
 const { OAuth2Client } = require('google-auth-library');
 const bcrypt = require('bcryptjs');
+const { User } = require('../models');
 const { comparePassword } = require('../helpers/bcrypt');
 const { generateToken } = require('../helpers/jwt');
 const { sendEmail } = require('../helpers/sendEmail');
@@ -799,7 +790,6 @@ const login = async (req, res) =&gt; {
       });
     }
   } <span class="branch-0 cbranch-no" title="branch not covered" >catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >    console.log(err, 'ini errornya');</span>
 <span class="cstat-no" title="statement not covered" >    return res.status(500).json({</span>
 <span class="cstat-no" title="statement not covered" >      result: 'failed',</span>
 <span class="cstat-no" title="statement not covered" >      message: 'Oops! Something went wrong',</span>
@@ -818,9 +808,7 @@ const loginGoogle = <span class="fstat-no" title="function not covered" >(req, r
 <span class="cstat-no" title="statement not covered" >  client</span>
 <span class="cstat-no" title="statement not covered" >    .verifyIdToken({</span>
 <span class="cstat-no" title="statement not covered" >      idToken: tokenId,</span>
-<span class="cstat-no" title="statement not covered" >      audience: process.env.GOOGLE_CLIENT_ID, // Specify the CLIENT_ID of the app that accesses the backend</span>
-<span class="cstat-no" title="statement not covered" >      // Or, if multiple clients access the backend:</span>
-<span class="cstat-no" title="statement not covered" >      //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]</span>
+<span class="cstat-no" title="statement not covered" >      audience: process.env.GOOGLE_CLIENT_ID,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    .then((ticket) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const payload = ticket.getPayload();</span>
@@ -898,7 +886,7 @@ const resetPassword = <span class="fstat-no" title="function not covered" >async
 <span class="cstat-no" title="statement not covered" >      null</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const user = await User.update(</span>
+<span class="cstat-no" title="statement not covered" >    await User.update(</span>
 <span class="cstat-no" title="statement not covered" >      { password: hashPassword },</span>
 <span class="cstat-no" title="statement not covered" >      { where: { reset_password_link: token }, returning: true }</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
@@ -928,7 +916,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jan 20 2022 17:06:50 GMT+0700 (Western Indonesia Time)
+                at Fri Jan 21 2022 08:29:30 GMT+0700 (Western Indonesia Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

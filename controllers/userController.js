@@ -1,6 +1,6 @@
-const { User, Detail } = require('../models');
 const cloudinary = require('cloudinary');
 const bcrypt = require('bcryptjs');
+const { User, Detail } = require('../models');
 
 const getAllUser = async (req, res) => {
   try {
@@ -56,7 +56,7 @@ const updateUser = async (req, res) => {
         crop: 'scale',
       });
 
-      const userUpdate = await User.update(
+      await User.update(
         {
           first_name,
           last_name,
@@ -136,7 +136,7 @@ const findOne = (req, res) => {
       res.status(200).json({
         result: 'success',
         message: 'successfully retrieve data',
-        data: data,
+        data,
       });
     })
     .catch((err) => {
@@ -156,7 +156,7 @@ const getLeaderboard = (req, res) => {
       res.status(200).json({
         result: 'success',
         message: 'successfully retrieve data',
-        data: data,
+        data,
       });
     })
     .catch((err) => {
@@ -169,7 +169,7 @@ const getLeaderboard = (req, res) => {
 };
 
 const updateScore = async (req, res) => {
-  let user = await Detail.findOne({
+  const user = await Detail.findOne({
     attributes: ['score'],
     where: {
       userId: req.user.id,
