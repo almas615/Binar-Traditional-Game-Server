@@ -69,33 +69,43 @@ const findOne = (req, res) => {
     });
 };
 
-const getLeaderboard = (req, res) => {
-  Detail.findAll({
-    where: {
-      gameId: req.params.id,
-    },
-    attributes: ['gameId', 'userId', 'score'],
-    order: [['score', 'DESC']],
-    include: {
-      model: User,
-      as: 'detail_user',
-      attributes: ['first_name', 'last_name', 'username', 'email'],
-    },
-  })
-    .then((detail) => {
+// eslint-disable-next-line consistent-return
+const getLeaderboard = async (req, res) => {
+  const number = /^[0-9]+$/;
+  if (!req.params.id.match(number)) {
+    return res.status(400).json({
+      result: 'failed',
+      message: 'bad request',
+    });
+  }
+  try {
+    const detail = await Detail.findAll({
+      where: {
+        gameId: req.params.id,
+      },
+      attributes: ['gameId', 'userId', 'score'],
+      order: [['score', 'DESC']],
+      include: {
+        model: User,
+        as: 'detail_user',
+        attributes: ['first_name', 'last_name', 'username', 'email'],
+      },
+    });
+
+    if (detail) {
       res.status(200).json({
         result: 'success',
         message: 'successfully retrieve data',
         data: detail,
       });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        result: 'failed',
-        message: 'some error occured while retrieving game',
-        error: err.message,
-      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      result: 'failed',
+      message: 'some error occured while retrieving game',
+      error: err.message,
     });
+  }
 };
 const getRecomendation = (req, res) => {
   Game.findAll({
