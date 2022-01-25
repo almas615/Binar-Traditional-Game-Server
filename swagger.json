@@ -13,7 +13,7 @@
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "host": "localhost:4000",
+    "host": "binar-traditional-game-server.herokuapp.com",
     "basePath": "/api",
     "tags": [
         {
@@ -41,7 +41,8 @@
         }
     },
     "schemes": [
-        "http"
+        "http",
+        "https"
     ],
     "paths": {
         "/register": {
