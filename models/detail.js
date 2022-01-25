@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Detail extends Model {
     /**
@@ -14,24 +14,23 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Game, {
         foreignKey: 'gameId',
         sourceKey: 'id',
-        as: 'detail_game'
+        as: 'detail_game',
       });
-      
       this.belongsTo(models.User, {
         foreignKey: 'userId',
         sourceKey: 'id',
-        as: 'detail_user'
+        as: 'detail_user',
       });
     }
-  };
+  }
   Detail.init({
     gameId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
-    score: DataTypes.INTEGER
+    score: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Detail',
-    tableName:'details'
+    tableName: 'details',
   });
   return Detail;
 };
