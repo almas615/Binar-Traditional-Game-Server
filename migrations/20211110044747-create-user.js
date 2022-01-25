@@ -50,11 +50,11 @@ module.exports = {
       },
       avatar_public_id: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       avatar_url: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
