@@ -24,6 +24,11 @@ module.exports = {
     "dialect": "postgres"
   },
   production: {
-    "use_env_variable": "DATABASE_URL",
+    "username": "vlstifypbpjwjo",
+    "password": "3ea2e35722eddba26473fb8df086d9905b46f05afa57dd90d70b54e5f0e05f86",
+    "database": "dc1h9g0pal8nfi",
+    "host": "ec2-54-157-15-228.compute-1.amazonaws.com",
+    "port": "5432",
+    "ssl": "true"
   },
 };
