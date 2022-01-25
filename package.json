@@ -2,9 +2,6 @@
   "name": "binar_chapter_9_backend",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "16.x"
-  },
   "main": "index.js",
   "scripts": {
     "db:create": "NODE_ENV=development npx sequelize db:create",
@@ -13,7 +10,7 @@
     "db:seed": "NODE_ENV=development npx sequelize db:seed:all",
     "dev": "NODE_ENV=development nodemon index.js",
     "test": "jest",
-    "start": "NODE_ENV=development node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
