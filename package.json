@@ -9,7 +9,7 @@
     "db:undo:migrate": "NODE_ENV=development npx sequelize db:migrate:undo:all",
     "db:seed": "NODE_ENV=development npx sequelize db:seed:all",
     "dev": "NODE_ENV=development nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "NODE_ENV=development node index.js"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "google-auth-library": "^7.10.3",
+    "jest": "^27.4.7",
     "jsonwebtoken": "^8.5.1",
     "nodemailer": "^6.7.2",
     "passport": "^0.5.0",
