@@ -1,7 +1,7 @@
 {
   "name": "binar_chapter_9_backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Note",
   "main": "index.js",
   "scripts": {
     "db:create": "NODE_ENV=development npx sequelize db:create",
@@ -45,5 +45,9 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "nodemon": "^2.0.14"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
   }
 }
