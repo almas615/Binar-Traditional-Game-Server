@@ -1,6 +1,9 @@
 {
   "name": "binar_chapter_9_backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "## Note",
   "main": "index.js",
   "scripts": {
@@ -23,6 +26,7 @@
   },
   "homepage": "https://github.com/Binar-Academy-Team-1/Binar_Chapter_9_BackEnd#readme",
   "dependencies": {
+    "@heroku/buildpack-registry": "^1.0.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.28.1",
     "cors": "^2.8.5",
