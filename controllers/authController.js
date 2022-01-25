@@ -234,9 +234,8 @@ const forgotPassword = async (req, res) => {
     from: 'Go Play',
     to: req.body.email,
     subject: 'Link to Reset Password',
-    html: `<p>Please click the link below to reset your password</p><p>${
-      process.env.CLIENT_URL
-    }/resetpassword/${generateToken(payload)}</p>`,
+    html: `<p>Please click the link below to reset your password</p><p>${process.env.CLIENT_URL
+      }/resetpassword/${generateToken(payload)}</p>`,
   };
   sendEmail(templateEmail);
   return res.status(200).json({
