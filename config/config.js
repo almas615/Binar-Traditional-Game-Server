@@ -17,22 +17,17 @@ module.exports = {
     dialect,
   },
   test: {
-    "username": "ulul",
-    "password": "canggih",
-    "database": "database_ch9",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    username: 'postgres',
+    password: 'secret',
+    database: 'binar_chp11_db',
+    host: '127.0.0.1',
+    dialect: 'postgres',
   },
   production: {
-    "username": "vlstifypbpjwjo",
-    "password": "3ea2e35722eddba26473fb8df086d9905b46f05afa57dd90d70b54e5f0e05f86",
-    "database": "dc1h9g0pal8nfi",
-    "host": "ec2-54-157-15-228.compute-1.amazonaws.com",
-    "port": "5432",
-    "dialect": "postgres",
-    "ssl": {
-      "rejectUnauthorized": "false"
-    }
-
+    username: 'ulul',
+    password: 'canggih',
+    database: 'database_ch9',
+    host: '127.0.0.1',
+    dialect: 'postgres',
   },
 };

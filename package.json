@@ -10,7 +10,7 @@
     "db:seed": "NODE_ENV=development npx sequelize db:seed:all",
     "dev": "NODE_ENV=development nodemon index.js",
     "test": "jest",
-    "start": "node index.js"
+    "start": "NODE_ENV=development node index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Binar-Academy-Team-1/Binar_Chapter_9_BackEnd#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.28.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
