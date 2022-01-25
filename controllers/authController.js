@@ -1,9 +1,8 @@
-/* eslint-disable */
 require('dotenv').config();
-const { User } = require('../models');
 const cloudinary = require('cloudinary');
 const { OAuth2Client } = require('google-auth-library');
 const bcrypt = require('bcryptjs');
+const { User } = require('../models');
 const { comparePassword } = require('../helpers/bcrypt');
 const { generateToken } = require('../helpers/jwt');
 const { sendEmail } = require('../helpers/sendEmail');
@@ -180,9 +179,7 @@ const loginGoogle = (req, res) => {
   client
     .verifyIdToken({
       idToken: tokenId,
-      audience: process.env.GOOGLE_CLIENT_ID, // Specify the CLIENT_ID of the app that accesses the backend
-      // Or, if multiple clients access the backend:
-      //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+      audience: process.env.GOOGLE_CLIENT_ID,
     })
     .then((ticket) => {
       const payload = ticket.getPayload();
@@ -260,7 +257,7 @@ const resetPassword = async (req, res) => {
       null
     );
 
-    const user = await User.update(
+    await User.update(
       { password: hashPassword },
       { where: { reset_password_link: token }, returning: true }
     );
