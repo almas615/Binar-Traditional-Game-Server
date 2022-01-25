@@ -76,6 +76,14 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      avatar_public_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      avatar_url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       total_score: DataTypes.INTEGER,
       bio: DataTypes.STRING,
       location: DataTypes.STRING,

@@ -1,4 +1,5 @@
 const { User, Detail } = require('../models');
+const cloudinary = require('cloudinary');
 const bcrypt = require('bcryptjs');
 
 const getAllUser = async (req, res) => {
@@ -43,6 +44,34 @@ const updateUser = async (req, res) => {
       bcrypt.genSaltSync(10),
       null
     );
+
+    const findUser = await User.findByPk(req.user.id);
+    if (req.body.avatar !== '') {
+      const image_id = findUser.avatar_public_id;
+      // Delete user previous image/avatar
+      await cloudinary.v2.uploader.destroy(image_id);
+      const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        folder: 'binar_chp11/avatar',
+        width: '150',
+        crop: 'scale',
+      });
+
+      const userUpdate = await User.update(
+        {
+          first_name,
+          last_name,
+          email,
+          username,
+          password: hashPassword,
+          bio,
+          location,
+          social_media_url,
+          avatar_public_id: result.public_id,
+          avatar_url: result.secure_url,
+        },
+        { where: { id }, returning: true }
+      );
+    }
 
     const user = await User.update(
       {
@@ -208,20 +237,20 @@ const getPlayedGame = (req, res) => {
       userId: req.user.id,
     },
   })
-  .then((game) => {
-    res.status(200).json({
-      result: 'success',
-      message: 'successfully retriving data',
-      data: game,
+    .then((game) => {
+      res.status(200).json({
+        result: 'success',
+        message: 'successfully retriving data',
+        data: game,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        result: 'failed',
+        message: 'some error occured while retriving data',
+        error: err.message,
+      });
     });
-  })
-  .catch((err) => {
-    res.status(500).json({
-      result: 'failed',
-      message: 'some error occured while retriving data',
-      error: err.message,
-    });
-  });
 };
 
 module.exports = {
