@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 const { hash } = require('bcryptjs');
 const { Model } = require('sequelize');
@@ -75,6 +76,14 @@ module.exports = (sequelize, DataTypes) => {
             msg: 'Your password must be longer than 6 characters',
           },
         },
+      },
+      avatar_public_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      avatar_url: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       total_score: DataTypes.INTEGER,
       bio: DataTypes.STRING,

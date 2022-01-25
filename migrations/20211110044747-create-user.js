@@ -48,6 +48,14 @@ module.exports = {
       reset_password_link: {
         type: Sequelize.STRING,
       },
+      avatar_public_id: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      avatar_url: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
